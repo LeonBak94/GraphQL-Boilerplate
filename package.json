@@ -1,0 +1,25 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node-dev --respawn --transpile-only --exit-child src/index.ts",
+    "migrate": "npx prisma migrate dev --name init",
+    "push": "npx prisma db push",
+    "build": "tsc . -p"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/config": "^3.3.2",
+    "@types/node": "^20.8.10",
+    "prisma": "^5.5.2",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.5.2",
+    "dotenv": "^16.3.1"
+  }
+}
