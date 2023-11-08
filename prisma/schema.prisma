@@ -11,9 +11,23 @@ datasource db {
 }
 
 model Student {
-  id       Int     @id @default(autoincrement())
+  id       Int        @id @default(autoincrement())
   email    String
   fullName String
-  dept     String?
-  enrolled Boolean @default(false)
+  dept     Department @relation(fields: [deptId], references: [id])
+  deptId   Int
+  enrolled Boolean    @default(false)
+
+  @@map(name: "student")
+}
+
+model Department {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  description String?   @db.VarChar(500)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  Student     Student[]
+
+  @@map(name: "department")
 }

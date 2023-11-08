@@ -11,9 +11,18 @@ export const Query = {
   students: () => {
     return prisma.student.findMany({});
   },
-  student: (_: any, args: { id: any }) => {
+  student: (_: any, args: { id: number }) => {
     return prisma.student.findFirst({
-      where: { id: Number(args.id) },
+      where: { id: args.id },
+    });
+  },
+  departments: () => {
+    return prisma.department.findMany({});
+  },
+
+  department: (_: any, args: { id: number }) => {
+    return prisma.department.findFirst({
+      where: { id: args.id },
     });
   },
 };
