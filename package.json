@@ -13,13 +13,19 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/config": "^3.3.2",
+    "@types/jsonwebtoken": "^9.0.5",
     "@types/node": "^20.8.10",
     "prisma": "^5.5.2",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.2.2"
   },
   "dependencies": {
     "@prisma/client": "^5.5.2",
-    "dotenv": "^16.3.1"
+    "apollo-server": "^3.12.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.3.1",
+    "jsonwebtoken": "^9.0.2"
   }
 }

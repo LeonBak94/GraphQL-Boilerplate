@@ -4,25 +4,50 @@ const prisma = new PrismaClient();
 
 export const Query = {
   enrollment: () => {
-    return prisma.student.findMany({
-      where: { enrolled: true },
-    });
+    try {
+      return prisma.student.findMany({
+        where: { enrolled: true },
+      });
+    } catch (err) {
+      console.log(err);
+      return false;
+    }
   },
   students: () => {
-    return prisma.student.findMany({});
+    try {
+      return prisma.student.findMany({});
+    } catch (err) {
+      console.log(err);
+      return false;
+    }
   },
   student: (_: any, args: { id: number }) => {
-    return prisma.student.findFirst({
-      where: { id: args.id },
-    });
+    try {
+      return prisma.student.findFirst({
+        where: { id: args.id },
+      });
+    } catch (err) {
+      console.log(err);
+      return false;
+    }
   },
   departments: () => {
-    return prisma.department.findMany({});
+    try {
+      return prisma.department.findMany({});
+    } catch (err) {
+      console.log(err);
+      return false;
+    }
   },
 
   department: (_: any, args: { id: number }) => {
-    return prisma.department.findFirst({
-      where: { id: args.id },
-    });
+    try {
+      return prisma.department.findFirst({
+        where: { id: args.id },
+      });
+    } catch (err) {
+      console.log(err);
+      return false;
+    }
   },
 };
