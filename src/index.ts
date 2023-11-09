@@ -8,8 +8,8 @@ const port = process.env.port;
 const server = new ApolloServer({
   resolvers,
   typeDefs,
-  // context: (req) => {
-  //   authorizeUser(req);
+  // context: async ({ req }) => {
+  //   authorizeUser(req.headers.authentication);
   // },
 });
 
