@@ -24,7 +24,6 @@ model Student {
   fullName String
   dept     Department @relation(fields: [deptId], references: [id])
   deptId   Int
-  enrolled Boolean    @default(false)
 
   @@map(name: "student")
 }

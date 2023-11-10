@@ -14,7 +14,6 @@ const Student = {
       where: { id: parent.dept },
     });
   },
-  enrolled: (parent: { enrolled: boolean }) => parent.enrolled,
 };
 
 export const resolvers = {

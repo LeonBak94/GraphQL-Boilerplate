@@ -61,21 +61,6 @@ export const Mutation = {
     }
   },
 
-  enroll: (_: any, args: { id: string }) => {
-    try {
-      return prisma.student.update({
-        where: {
-          id: Number(args.id),
-        },
-        data: {
-          enrolled: true,
-        },
-      });
-    } catch (err) {
-      console.log(err);
-      return false;
-    }
-  },
   createDepartment: (_: any, args: { name: string; description: string }) => {
     try {
       return prisma.department.create({

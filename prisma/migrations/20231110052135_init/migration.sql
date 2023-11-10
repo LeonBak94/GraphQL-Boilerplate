@@ -13,7 +13,6 @@ CREATE TABLE "student" (
     "email" TEXT NOT NULL,
     "fullName" TEXT NOT NULL,
     "deptId" INTEGER NOT NULL,
-    "enrolled" BOOLEAN NOT NULL DEFAULT false,
 
     CONSTRAINT "student_pkey" PRIMARY KEY ("id")
 );

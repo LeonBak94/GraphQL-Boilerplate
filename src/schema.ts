@@ -14,7 +14,6 @@ export const typeDefs = gql`
     email: String!
     fullName: String
     dept: Department!
-    enrolled: Boolean
     deptId: ID!
   }
 
@@ -38,7 +37,6 @@ export const typeDefs = gql`
     registerUser(email: String!, password: String!): User
     login(email: String!, password: String!): AccessToken
     registerStudent(email: String!, fullName: String!, deptId: Int!): Student!
-    enroll(id: ID!): Student
     createDepartment(name: String!, description: String!): Department!
   }
 `;

@@ -5,9 +5,7 @@ const prisma = new PrismaClient();
 export const Query = {
   enrollment: () => {
     try {
-      return prisma.student.findMany({
-        where: { enrolled: true },
-      });
+      return prisma.student.findMany({});
     } catch (err) {
       console.log(err);
       return false;
